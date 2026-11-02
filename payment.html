@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Muse Alert — premium access</title>
+  <link rel="icon" href="../../brand/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css">
+</head>
+<body><main class="shell narrow">
+  <a href="index.html">← Muse Alert</a><span class="eyebrow">PREMIUM ACCESS</span><h1>Choose your support level.</h1>
+  <p class="notice"><b>Age and purchase gate:</b> Muse Alert payments are for adults 18 and over. Review the disclosures, then confirm your age before a payment widget is shown.</p>
+  <section class="discount-card"><div class="discount-badge">THANK YOU</div><div><h2>Community discounts</h2><p>Discount support is reserved for <b>senior citizens, first responders, veterans, and their immediate families</b>.</p><p class="muted">The discount amount, eligibility verification, and checkout application are not configured in this local scaffold yet. Contact <a href="mailto:support@fedpromptly.com?subject=Muse%20Alert%20discount%20request">support</a> before subscribing to request the current offer.</p></div></section>
+  <label class="age-gate"><input id="age-confirm" type="checkbox"> I confirm that I am 18 or older and understand Muse Alert is not a doctor, therapist, lawyer, or emergency service.</label>
+  <p id="gate-message" class="muted">Payment options are hidden until you confirm the age and disclosure gate.</p>
+  <section id="payment-options" class="payment-options" hidden>
+    <div class="pay-card"><h2>Fedpromptly Card</h2><p>Recurring premium access through PayPal.</p><div id="paypal-button-container-P-4FD24238VX4902214NK2XP2Y"></div></div>
+    <div class="pay-card"><h2>Card checkout</h2><p>Use the Stripe-hosted checkout button when configured for this site.</p><script async src="https://js.stripe.com/v3/buy-button.js"></script><stripe-buy-button buy-button-id="buy_btn_1UJKaaJaRf233kfWKZ81fcIe" publishable-key="pk_live_51UIdAGJaRf233kfWlFacR31IYVGdjCVAttNFzIgQGXQzrUdc894iJcBqamRZNwF11z2AN5kvjyzitor462f2egVI00UmKj0sd8"></stripe-buy-button></div>
+    <div class="pay-card"><h2>Support development</h2><p>Optional sponsorship for the Fedpromptly project.</p><iframe src="https://github.com/sponsors/Git-FED/button" title="Sponsor Git-FED" height="32" width="114" style="border:0;border-radius:6px"></iframe></div>
+    <div class="pay-card"><h2>Crypto payment</h2><a href="https://nowpayments.io/payment/?iid=5997958570&source=button" target="_blank" rel="noreferrer noopener"><img src="https://nowpayments.io/images/embeds/payments-button-white.svg" alt="Cryptocurrency payment option"></a></div>
+  </section>
+  <p><a href="safety.html">Read safety disclosures</a> · <a href="subscription-cancelled.html">Cancel / return</a></p>
+  <script src="https://www.paypal.com/sdk/js?client-id=BAA_ndqaWMyQwTnDZ0LXwLQ22jdJo9uxkeXYqmBbF-hD41HMiZ83mvOcx1Kti0b6ZfXfje7Q1ievNaS8Ok&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+  <script>
+    const gate = document.getElementById('age-confirm');
+    const options = document.getElementById('payment-options');
+    const message = document.getElementById('gate-message');
+    gate.addEventListener('change', () => { options.hidden = !gate.checked; message.textContent = gate.checked ? 'Payment options unlocked. Review each provider before continuing.' : 'Payment options are hidden until you confirm the age and disclosure gate.'; });
+    if (window.paypal) {
+      paypal.Buttons({style:{shape:'rect',color:'gold',layout:'vertical',label:'subscribe'},createSubscription:(data,actions)=>actions.subscription.create({plan_id:'P-4FD24238VX4902214NK2XP2Y',quantity:1}),onApprove:(data)=>{ window.location.href='subscription-success.html?id='+encodeURIComponent(data.subscriptionID); }}).render('#paypal-button-container-P-4FD24238VX4902214NK2XP2Y');
+    }
+  </script>
+</main></body></html>
