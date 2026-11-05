@@ -1,5 +1,7 @@
 # Muse Alert
 
+<img width="896" height="504" alt="Muse Alert 75% commercial - large GIF" src="https://github.com/user-attachments/assets/51f22cbd-db1e-4f4f-8917-a8d5bcc2ec35" />
+
 **A static, safety-first web scaffold for Muse users to configure check-ins, prepare an SOS report, organize trusted contacts, and review exact-match medication recall guidance.**
 
 > **Important:** Muse Alert is not a doctor, therapist, lawyer, emergency service, or investigator. Muse and Meta are not licensed doctors or therapists. For immediate danger, contact local emergency services directly.
